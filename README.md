@@ -156,6 +156,19 @@ Now that everything is set up, verify that your SSH connection to GitHub is work
 
 If your Git repository was previously using HTTPS for pushing and pulling, you’ll want to switch to SSH to avoid future authentication prompts.
 
+To check if it has been configured with SSH or HTTPS
+
+```bash
+git remote -v
+```
+
+If it has configured with HTTPS, if will show like this
+
+```bash
+origin	https://github.com/<username>/<repositery>.git (fetch)
+origin	https://github.com/<username>/<repositery>.git (push)
+```
+
 1. **Change the remote URL** from HTTPS to SSH with the following command:
 
    ```bash
