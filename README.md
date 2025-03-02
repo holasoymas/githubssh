@@ -17,6 +17,7 @@ Using SSH keys has many benefits over HTTPS, including enhanced security, perman
    - [Setting Up the SSH Agent](#setting-up-the-ssh-agent)
    - [Automating SSH Agent Setup (Optional)](#automating-ssh-agent-setup-optional)
    - [Verifying SSH Connection](#verifying-ssh-connection)
+   - [Configure Git to always use SSH](#configure-git-to-always-use-ssh)
    - [Switching Remote URL from HTTPS to SSH](#switching-remote-url-from-https-to-ssh)
 3. [Why SSH Over HTTPS?](#why-ssh-over-https)
 
@@ -149,6 +150,30 @@ Now that everything is set up, verify that your SSH connection to GitHub is work
    ```
 
    - **Explanation**: This confirms that your SSH key is correctly set up and that you can authenticate with GitHub using SSH.
+
+---
+
+### Configure Git to always use SSH
+
+If you prefer to use SSH for all repositories, you can configure Git globally to rewrite HTTPS URLs to SSH URLs. Here's how:
+
+1. Set Up a Global URL Rewrite :
+
+   ```bash
+   git config --global url."git@github.com:".insteadOf "https://github.com/"
+   ```
+
+2. Verify the Configuration :
+
+   ```bash
+   git config --global --list
+   ```
+
+   Look line like this :
+
+   ```bash
+   url.git@github.com:.insteadof=https://github.com/
+   ```
 
 ---
 
